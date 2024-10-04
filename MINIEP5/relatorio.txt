@@ -1,0 +1,21 @@
+Explicação:
+Variáveis Globais:
+
+    - stones: Representa as pedras com sapos ('F'), rãs ('T') e um espaço vazio ('_').
+    - emptyPos: Rastrea a posição atual da pedra vazia.
+    - deadlockCounter: Conta o número de saltos falhos para detectar um possível deadlock.
+
+Funções das Threads de Sapos e Rãs:
+
+    - Cada thread verifica se pode se mover ou saltar. Se não puder, o contador de deadlock é incrementado.
+    - Se for possível um movimento ou salto, a thread troca sua posição com o espaço vazio e reinicializa o contador de deadlock.
+
+Árbitro:
+
+    - Monitora o deadlockCounter e detecta quando ele excede o limite, indicando um possível deadlock.
+
+Função Principal:
+
+    - Inicializa os sapos, rãs e pedras, em seguida, cria threads para cada animal e uma thread para o árbitro.
+    - Espera todas as threads terminarem antes de sair do programa.
+
